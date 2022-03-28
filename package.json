@@ -1,0 +1,16 @@
+{
+  "name": "alienware-autologin",
+  "version": "1.0.0",
+  "description": "Auto Login for Alien Ware",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Dm94Dani",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "puppeteer": "^13.0.0"
+  }
+}
