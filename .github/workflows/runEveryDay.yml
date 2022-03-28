@@ -8,9 +8,9 @@ jobs:
   Run-Node:
     runs-on: ubuntu-latest
     env:
-      ALIENWARE_REGION: secrets.REGION
-      ALIENWARE_USERNAME: secrets.USERNAME
-      ALIENWARE_PASSWORD: secrets.PASSWORD
+      ALIENWARE_REGION: ${{secrets.REGION}}
+      ALIENWARE_USERNAME: ${{secrets.USERNAME}}
+      ALIENWARE_PASSWORD: ${{secrets.PASSWORD}}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
