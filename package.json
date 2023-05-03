@@ -1,7 +1,7 @@
 {
-  "name": "alienware-autologin",
-  "version": "1.0.0",
-  "description": "Auto Login for Alien Ware",
+  "name": "another-autologin",
+  "version": "1.0.1",
+  "description": "Another auto login",
   "main": "index.js",
   "private": true,
   "scripts": {

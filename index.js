@@ -18,6 +18,10 @@ if (username == null || pass == null) {
 
     try {
       const page = await browser.newPage();
+      await page.setViewport({ width: 1440, height: 1024 });
+      await page.setUserAgent(
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36"
+      );
       await page.goto(`https://${region}.alienwarearena.com/`, {
         timeout: 0,
         waitUntil: "load",
@@ -27,6 +31,7 @@ if (username == null || pass == null) {
       await page.click('[class="nav-link nav-link-login"]');
       console.log("Login screen");
       await page.waitForSelector("#_username");
+      await page.waitForSelector("#_password");
       await page.$eval(
         "#_username",
         (el, username) => {
@@ -43,11 +48,10 @@ if (username == null || pass == null) {
       );
       await page.waitForSelector("#_login");
       await page.click("#_login");
-      await page.waitForSelector("#umCollapse");
+      await page.waitForSelector('[class="incomplete-quests"]');
       console.log("Logged in");
-      await page.click("#umCollapse");
     } catch (e) {
-      console.error(e.message);
+      console.log(e.message);
     } finally {
       await browser.close();
     }
